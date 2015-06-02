@@ -5,8 +5,6 @@ module.exports = function inherit(len) {
     return new Array((len||1)+1)
       .join('0')
       .split('')
-      .map(function(){
-        return identity(d)
-      })
+      .map(identity.bind(0,d))
   }
 }
