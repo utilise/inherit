@@ -1,10 +1,12 @@
-var identity = require('identity')
+var wrap = require('wrap')
 
-module.exports = function inherit(len) {
+module.exports = function inherit(l) {
+  if (arguments.length > 1) return [l]
+
   return function(d) {
-    return new Array((len||1)+1)
+    return new Array((l||1)+1)
       .join('0')
       .split('')
-      .map(identity.bind(0,d))
+      .map(wrap(d))
   }
 }
