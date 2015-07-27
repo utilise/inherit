@@ -1,4 +1,4 @@
-var wrap = require('wrap')
+var wrap = require('utilise.wrap')
 
 module.exports = function inherit(l) {
   if (arguments.length > 1) return [l]
